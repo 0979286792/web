@@ -3,7 +3,7 @@
 -- http://www.phpmyadmin.net
 --
 -- 主機: 127.0.0.1
--- 產生時間： 2017-03-09 13:59:47
+-- 產生時間： 2017-03-17 16:34:53
 -- 伺服器版本: 10.1.19-MariaDB
 -- PHP 版本： 5.6.28
 
@@ -92,7 +92,8 @@ CREATE TABLE `crab` (
   `crab_Subject` varchar(50) NOT NULL,
   `crab_Feature` varchar(500) NOT NULL,
   `crab_Habits` varchar(300) NOT NULL,
-  `crab_GPSLocation` varchar(100) NOT NULL
+  `crab_GPSLocation` varchar(100) NOT NULL,
+  `crab_Picture` varchar(50) NOT NULL
 ) ENGINE=InnoDB DEFAULT CHARSET=utf8mb4;
 
 -- --------------------------------------------------------
@@ -173,6 +174,7 @@ ALTER TABLE `classification`
 -- 資料表索引 `crab`
 --
 ALTER TABLE `crab`
+  ADD UNIQUE KEY `crab_ID_2` (`crab_ID`),
   ADD KEY `animal_ID` (`animal_ID`),
   ADD KEY `crab_ID` (`crab_ID`);
 
@@ -213,7 +215,7 @@ ALTER TABLE `classification`
 -- 使用資料表 AUTO_INCREMENT `crab`
 --
 ALTER TABLE `crab`
-  MODIFY `crab_ID` int(11) NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=1004;
+  MODIFY `crab_ID` int(11) NOT NULL AUTO_INCREMENT;
 --
 -- 使用資料表 AUTO_INCREMENT `user_roles`
 --
